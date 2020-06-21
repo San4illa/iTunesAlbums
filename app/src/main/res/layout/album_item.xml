@@ -10,16 +10,15 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--   TODO поменять цвет текста     -->
     <TextView
         android:id="@+id/albumName"
+        style="@style/TextViewHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -28,7 +27,6 @@
         android:layout_marginRight="16dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="@color/design_default_color_secondary"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/artistName"
         app:layout_constraintEnd_toEndOf="parent"
