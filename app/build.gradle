@@ -55,6 +55,9 @@ dependencies {
     kapt "com.github.stephanenicolas.toothpick:toothpick-compiler:$toothpickVersion"
     implementation "com.github.stephanenicolas.toothpick:toothpick-runtime:$toothpickVersion"
 
+    // RxJava
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+
     // Navigation
     implementation 'ru.terrakok.cicerone:cicerone:5.1.0'
 
