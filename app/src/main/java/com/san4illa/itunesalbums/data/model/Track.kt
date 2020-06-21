@@ -1,4 +1,4 @@
-package com.san4illa.itunesalbums.data
+package com.san4illa.itunesalbums.data.model
 
 data class Track(
     val number: String,

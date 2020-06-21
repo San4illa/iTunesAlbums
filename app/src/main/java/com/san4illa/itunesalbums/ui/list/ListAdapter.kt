@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.san4illa.itunesalbums.R
-import com.san4illa.itunesalbums.data.Album
+import com.san4illa.itunesalbums.data.model.Album
 import kotlinx.android.synthetic.main.album_item.view.*
 
 class ListAdapter(private var albums: List<Album>) : RecyclerView.Adapter<ListAdapter.ListAdapterVH>() {

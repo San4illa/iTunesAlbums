@@ -1,5 +1,6 @@
 package com.san4illa.itunesalbums.di
 
+import com.san4illa.itunesalbums.data.Repository
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.Router
@@ -10,5 +11,7 @@ class AppModule : Module() {
         val cicerone = Cicerone.create()
         bind(Router::class.java).toInstance(cicerone.router)
         bind(NavigatorHolder::class.java).toInstance(cicerone.navigatorHolder)
+
+        bind(Repository::class.java).singleton()
     }
 }
