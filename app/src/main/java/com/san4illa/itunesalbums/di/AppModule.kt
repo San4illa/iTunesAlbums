@@ -1,6 +1,8 @@
 package com.san4illa.itunesalbums.di
 
 import com.san4illa.itunesalbums.data.Repository
+import com.san4illa.itunesalbums.data.network.Api
+import com.san4illa.itunesalbums.di.provider.ApiProvider
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.Router
@@ -13,5 +15,7 @@ class AppModule : Module() {
         bind(NavigatorHolder::class.java).toInstance(cicerone.navigatorHolder)
 
         bind(Repository::class.java).singleton()
+
+        bind(Api::class.java).toProvider(ApiProvider::class.java).providesSingleton()
     }
 }
