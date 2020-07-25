@@ -1,6 +1,7 @@
 package com.san4illa.itunesalbums.ui.detail
 
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.san4illa.itunesalbums.R
 import com.san4illa.itunesalbums.data.model.Album
 import com.san4illa.itunesalbums.di.AlbumId
@@ -36,6 +37,14 @@ class DetailFragment : BaseFragment(), DetailView {
         progressBar.hide()
         tracksRecyclerView.hide()
         errorTextView.hide()
+
+        albumNameTextView.text = album.albumName
+        artistNameTextView.text = album.artistName
+        releaseDateTextView.text = album.releaseDate
+        Glide.with(this)
+            .load(album.imageUrl)
+            .placeholder(R.drawable.empty_cover)
+            .into(coverImageView)
     }
 
     override fun showError() {

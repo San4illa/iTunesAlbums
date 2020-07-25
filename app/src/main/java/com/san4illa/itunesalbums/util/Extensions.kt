@@ -4,6 +4,7 @@ import android.view.View
 import com.san4illa.itunesalbums.data.model.Album
 import com.san4illa.itunesalbums.data.model.Response
 import com.san4illa.itunesalbums.data.model.Result
+import com.san4illa.itunesalbums.data.model.Track
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -30,3 +31,11 @@ fun <T> Single<T>.applyAsync() =
 fun Response.toAlbumsList(): List<Album> = results.map { it.toAlbum() }
 
 fun Result.toAlbum() = Album(collectionId, collectionName, artistName, artworkUrl100, trackCount, releaseDate)
+
+fun Response.toAlbum(): Album {
+    val tracks = results.drop(1).map { it.toTrack() }
+    val album = results[0].toAlbum()
+    return album.copy(tracks = tracks)
+}
+
+private fun Result.toTrack() = Track(trackNumber, trackName, trackTimeMillis)
