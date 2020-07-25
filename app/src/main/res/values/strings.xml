@@ -4,4 +4,6 @@
 
     <string name="empty">Nothing found</string>
     <string name="error">Error</string>
+
+    <string name="search">Search</string>
 </resources>
