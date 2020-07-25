@@ -10,6 +10,8 @@ import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.text.SimpleDateFormat
+import java.util.*
 
 fun Any.objectScopeName() = "${javaClass.simpleName}_${hashCode()}"
 
@@ -30,7 +32,17 @@ fun <T> Single<T>.applyAsync() =
 
 fun Response.toAlbumsList(): List<Album> = results.map { it.toAlbum() }
 
-fun Result.toAlbum() = Album(collectionId, collectionName, artistName, artworkUrl100, trackCount, releaseDate)
+fun Result.toAlbum() =
+    Album(collectionId, collectionName, artistName, formatImageUrl(artworkUrl100), trackCount, formatDate(releaseDate))
+
+private fun formatImageUrl(string: String) = string.replace("100x100bb", "313x0w")
+
+private fun formatDate(string: String): String {
+    val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
+    val date = sdf.parse(string)
+    sdf.applyPattern("dd.MM.yyyy")
+    return sdf.format(date)
+}
 
 fun Response.toAlbum(): Album {
     val tracks = results.drop(1).map { it.toTrack() }
