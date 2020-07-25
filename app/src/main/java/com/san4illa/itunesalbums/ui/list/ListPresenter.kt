@@ -10,13 +10,13 @@ import javax.inject.Inject
 class ListPresenter @Inject constructor(
     private val repository: Repository
 ) : BasePresenter<ListView>() {
-    override fun onFirstViewAttach() {
-    }
-
     fun onSearchClicked(query: String) {
         disposables += repository.getAlbums(query)
             .subscribe({
-                viewState.showAlbums(it)
+                if (it.isNotEmpty())
+                    viewState.showAlbums(it)
+                else
+                    viewState.showEmptyView()
             }, {
                 viewState.showError()
             })
