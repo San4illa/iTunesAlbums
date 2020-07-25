@@ -38,4 +38,11 @@ fun Response.toAlbum(): Album {
     return album.copy(tracks = tracks)
 }
 
-private fun Result.toTrack() = Track(trackNumber, trackName, trackTimeMillis)
+private fun Result.toTrack() = Track(trackNumber, trackName, formatTrackLength(trackTimeMillis))
+
+private fun formatTrackLength(trackTimeMillis: String): String {
+    val milliseconds = trackTimeMillis.toInt()
+    val minutes = milliseconds / 1000 / 60
+    val seconds = (milliseconds / 1000 % 60).toString().padStart(2, '0')
+    return "$minutes:$seconds"
+}

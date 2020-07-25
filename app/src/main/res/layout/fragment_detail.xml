@@ -52,7 +52,6 @@
 
         <TextView
             android:id="@+id/releaseDateTextView"
-            style="@style/TextViewHeader"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
@@ -66,11 +65,14 @@
             android:id="@+id/tracksRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginVertical="16dp"
             android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coverImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/coverImageView"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/track_item" />
 
         <TextView
             android:id="@+id/errorTextView"

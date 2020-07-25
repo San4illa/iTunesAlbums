@@ -1,6 +1,7 @@
 package com.san4illa.itunesalbums.ui.detail
 
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.san4illa.itunesalbums.R
 import com.san4illa.itunesalbums.data.model.Album
@@ -35,7 +36,7 @@ class DetailFragment : BaseFragment(), DetailView {
 
     override fun showAlbum(album: Album) {
         progressBar.hide()
-        tracksRecyclerView.hide()
+        tracksRecyclerView.show()
         errorTextView.hide()
 
         albumNameTextView.text = album.albumName
@@ -45,6 +46,11 @@ class DetailFragment : BaseFragment(), DetailView {
             .load(album.imageUrl)
             .placeholder(R.drawable.empty_cover)
             .into(coverImageView)
+
+        album.tracks?.let {
+            tracksRecyclerView.layoutManager = LinearLayoutManager(context)
+            tracksRecyclerView.adapter = TracksAdapter(it)
+        }
     }
 
     override fun showError() {
