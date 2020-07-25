@@ -9,7 +9,10 @@ import com.san4illa.itunesalbums.R
 import com.san4illa.itunesalbums.data.model.Album
 import kotlinx.android.synthetic.main.album_item.view.*
 
-class ListAdapter(private var albums: List<Album>) : RecyclerView.Adapter<ListAdapter.ListAdapterVH>() {
+class ListAdapter(
+    private val albums: List<Album>,
+    private val onAlbumClickListener: (String) -> (Unit)
+) : RecyclerView.Adapter<ListAdapter.ListAdapterVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapterVH {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.album_item, parent, false)
         return ListAdapterVH(view)
@@ -28,6 +31,8 @@ class ListAdapter(private var albums: List<Album>) : RecyclerView.Adapter<ListAd
                     .load(album.imageUrl)
                     .placeholder(R.drawable.empty_cover)
                     .into(image)
+
+                setOnClickListener { onAlbumClickListener(album.id) }
             }
         }
     }

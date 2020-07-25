@@ -10,7 +10,7 @@ object Screens {
         override fun getFragment(): Fragment = ListFragment()
     }
 
-    object Detail : SupportAppScreen() {
-        override fun getFragment(): Fragment = DetailFragment()
+    data class Detail(val albumId: String) : SupportAppScreen() {
+        override fun getFragment(): Fragment = DetailFragment.newInstance(albumId)
     }
 }

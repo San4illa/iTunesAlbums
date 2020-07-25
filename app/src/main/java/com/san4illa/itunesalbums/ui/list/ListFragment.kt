@@ -36,7 +36,7 @@ class ListFragment : BaseFragment(), ListView {
         errorTextView.hide()
 
         albumsRecyclerView.layoutManager = LinearLayoutManager(context)
-        albumsRecyclerView.adapter = ListAdapter(albums)
+        albumsRecyclerView.adapter = ListAdapter(albums, presenter::onAlbumClicked)
     }
 
     override fun showEmptyView() {
