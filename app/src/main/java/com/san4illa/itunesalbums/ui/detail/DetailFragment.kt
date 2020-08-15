@@ -1,6 +1,7 @@
 package com.san4illa.itunesalbums.ui.detail
 
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.san4illa.itunesalbums.R
@@ -33,6 +34,13 @@ class DetailFragment : BaseFragment(), DetailView {
 
     @ProvidePresenter
     fun providePresenter(): DetailPresenter = scope.getInstance(DetailPresenter::class.java)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        toolbar.setNavigationOnClickListener {
+            presenter.onBackPressed()
+        }
+    }
 
     override fun showAlbum(album: Album) {
         progressBar.hide()
