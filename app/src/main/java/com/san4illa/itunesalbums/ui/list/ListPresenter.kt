@@ -2,6 +2,7 @@ package com.san4illa.itunesalbums.ui.list
 
 import com.san4illa.itunesalbums.Screens
 import com.san4illa.itunesalbums.data.Repository
+import com.san4illa.itunesalbums.data.model.Album
 import com.san4illa.itunesalbums.ui.base.BasePresenter
 import com.san4illa.itunesalbums.util.plusAssign
 import moxy.InjectViewState
@@ -15,9 +16,9 @@ class ListPresenter @Inject constructor(
 ) : BasePresenter<ListView>() {
     fun onSearchClicked(query: String) {
         disposables += repository.getAlbums(query)
-            .subscribe({
-                if (it.isNotEmpty())
-                    viewState.showAlbums(it)
+            .subscribe({ albums ->
+                if (albums.isNotEmpty())
+                    viewState.showAlbums(albums.sortedWith(compareBy(Album::albumName)))
                 else
                     viewState.showEmptyView()
             }, {
