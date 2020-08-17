@@ -9,7 +9,12 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
 
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Toolbar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:background">@color/gray</item>
     </style>
 
     <style name="TextViewHeader">

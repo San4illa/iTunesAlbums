@@ -8,8 +8,10 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        style="@style/Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="4dp"
         app:navigationIcon="@drawable/ic_arrow_back" />
 
     <androidx.core.widget.NestedScrollView
