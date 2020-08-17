@@ -25,7 +25,8 @@ class MainActivity : MvpAppCompatActivity() {
         Toothpick.inject(this, Toothpick.openScope(DI.APP_SCOPE))
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        router.newRootScreen(Screens.List)
+        if (savedInstanceState == null)
+            router.newRootScreen(Screens.List)
     }
 
     override fun onResumeFragments() {
