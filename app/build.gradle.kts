@@ -45,6 +45,10 @@ dependencies {
     implementation("com.google.android.material:material:1.2.1")
     implementation("androidx.constraintlayout:constraintlayout:2.0.1")
 
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0-M1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0-M1")
+
     // Moxy
     val moxyVersion = "2.0.2"
     kapt("com.github.moxy-community:moxy-compiler:$moxyVersion")
@@ -56,16 +60,10 @@ dependencies {
     kapt("com.github.stephanenicolas.toothpick:toothpick-compiler:$toothpickVersion")
     implementation("com.github.stephanenicolas.toothpick:toothpick-runtime:$toothpickVersion")
 
-    // RxJava
-    val rxVersion = "3.0.0"
-    implementation("io.reactivex.rxjava3:rxandroid:$rxVersion")
-    implementation("io.reactivex.rxjava3:rxjava:$rxVersion")
-
     // Retrofit
     val retrofitVersion = "2.9.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
-    implementation("com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0")
 
     // Navigation
     implementation("ru.terrakok.cicerone:cicerone:5.1.0")

@@ -12,7 +12,7 @@ Test Android app that displays albums with detailed information from the iTunes 
 
 * [Cicerone](https://github.com/terrakok/Cicerone)
 
-* [RxJava 3](https://github.com/ReactiveX/RxJava)
+* [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 
 * [RxAndroid](https://github.com/ReactiveX/RxAndroid)
 
