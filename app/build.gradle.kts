@@ -60,16 +60,10 @@ dependencies {
     kapt("com.github.stephanenicolas.toothpick:toothpick-compiler:$toothpickVersion")
     implementation("com.github.stephanenicolas.toothpick:toothpick-runtime:$toothpickVersion")
 
-    // RxJava
-    val rxVersion = "3.0.0"
-    implementation("io.reactivex.rxjava3:rxandroid:$rxVersion")
-    implementation("io.reactivex.rxjava3:rxjava:$rxVersion")
-
     // Retrofit
     val retrofitVersion = "2.9.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
-    implementation("com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0")
 
     // Navigation
     implementation("ru.terrakok.cicerone:cicerone:5.1.0")
