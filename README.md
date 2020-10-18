@@ -14,8 +14,6 @@ Test Android app that displays albums with detailed information from the iTunes 
 
 * [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 
-* [RxAndroid](https://github.com/ReactiveX/RxAndroid)
-
 * [Retrofit 2](https://github.com/square/retrofit)
 
 * [Glide](https://github.com/bumptech/glide)
