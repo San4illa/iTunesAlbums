@@ -45,6 +45,10 @@ dependencies {
     implementation("com.google.android.material:material:1.2.1")
     implementation("androidx.constraintlayout:constraintlayout:2.0.1")
 
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0-M1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0-M1")
+
     // Moxy
     val moxyVersion = "2.0.2"
     kapt("com.github.moxy-community:moxy-compiler:$moxyVersion")
